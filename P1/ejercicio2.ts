@@ -2,7 +2,7 @@ export const multiplos_3_5 = (n:number):number[] => {
 
     const solucion:number[]=[];
 
-    for(let i:number=0; i<=n; i++){
+    for(let i=0; i<=n; i++){
         
         if(3*i<n){
             solucion.push(3*i); 

@@ -3,7 +3,7 @@ export const arr_alfabeto = (arr_palabras:string[]):string => {
     const arr_ordenado:string[]=arr_palabras.sort();
     let valor_solucion:string="";
 
-    for(let i:number=0; i<arr_ordenado[0].length; i++){
+    for(let i=0; i<arr_ordenado[0].length; i++){
         if(i===arr_ordenado[0].length-1){
             valor_solucion=valor_solucion+arr_ordenado[0][i];
         }
