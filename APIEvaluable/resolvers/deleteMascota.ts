@@ -1,7 +1,7 @@
 import { Request, Response } from "npm:express@4.18.2";
 import MascotaModel from "../db/mascota.ts";
 
-const deletePerson = async (req: Request, res: Response) => {
+const deleteMascota = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const mascota = await MascotaModel.findOneAndDelete({ id }).exec();
@@ -16,4 +16,4 @@ const deletePerson = async (req: Request, res: Response) => {
   }
 };
 
-export default deletePerson;
+export default deleteMascota;
