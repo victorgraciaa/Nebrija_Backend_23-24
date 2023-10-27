@@ -1,7 +1,7 @@
 import { Request, Response } from "npm:express@4.18.2";
 import MascotaModel from "../db/mascota.ts";
 
-const addPerson = async (req: Request, res: Response) => {
+const addMascota = async (req: Request, res: Response) => {
   try {
     const { nombre, descripcion, tipo } = req.body;
     
@@ -31,4 +31,4 @@ const addPerson = async (req: Request, res: Response) => {
   }
 };
 
-export default addPerson;
+export default addMascota;

@@ -7,11 +7,15 @@ const mascotaSchema = new Schema(
   {
     nombre: { type: String, required: true },
     descripcion: { type: String, required: true },
-    tipo: { type: String, required: true }
+    tipo: { type: String, required: true } //CORRECION type: Strimg, enum: MASCOTATYPE, required: true
   },
   { timestamps: true }
 );
 
 export type MascotaModelType = mongoose.Document & Omit<Mascota, "id">;
+
+//CORRECION const Model = mongoose.Model
+//CORRECION const MascotaModel = new Model<MascotaModelType>("mascotas", MascotaSchema)
+//CORRECION export deafault MascotaModel
 
 export default mongoose.model<MascotaModelType>("mascotas", mascotaSchema);
