@@ -6,6 +6,8 @@ const updateMascota = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const { nombre, descripcion, tipo } = req.body;
+
+    /*
     const mascota = await MascotaModel.findOneAndDelete({ _id: new ObjectId(id) }).exec();
     if (!mascota) {
       res.status(404).send("Mascota no encontrada");
@@ -15,6 +17,7 @@ const updateMascota = async (req: Request, res: Response) => {
       res.status(400).send("Nombre, descripcion y tipo son necesarios");
       return;
     }
+    */
     
     /*
     if(tipo !== "perros" || tipo !== "gatos" || tipo !== "serpientes"){
@@ -23,7 +26,7 @@ const updateMascota = async (req: Request, res: Response) => {
     */  
 
     const updatedMascota = await MascotaModel.findOneAndUpdate(
-      { _id },
+      { _id: new ObjectId(id) },
       { nombre, descripcion, tipo },
       { new: true }
     ).exec();
