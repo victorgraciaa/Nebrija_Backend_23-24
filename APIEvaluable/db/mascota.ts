@@ -7,7 +7,7 @@ const mascotaSchema = new Schema(
   {
     nombre: { type: String, required: true },
     descripcion: { type: String, required: true },
-    tipo: { type: String, required: true } //CORRECION type: Strimg, enum: MASCOTATYPE, required: true
+    tipo: { type: String, required: true } //CORRECION type: String, enum: MASCOTATYPE, required: true
   },
   { timestamps: true }
 );
