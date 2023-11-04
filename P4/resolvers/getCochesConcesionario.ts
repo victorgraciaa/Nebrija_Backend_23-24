@@ -3,8 +3,9 @@ import ConcesionarioModel from "../db/concesionario.ts";
 
 const getCochesConcesionario = async (req: Request, res: Response) => {
   try {
-    const { id } = req.params
-    const concesionario = await ConcesionarioModel.findById( id ).exec();
+    const { idConcesionario } = req.params
+    
+    const concesionario = await ConcesionarioModel.findById( idConcesionario ).exec();
 
     if (!concesionario) {
         res.status(404).send("Concesionario no encontrado")
