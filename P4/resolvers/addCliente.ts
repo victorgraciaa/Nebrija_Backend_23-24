@@ -3,12 +3,12 @@ import ClienteModel from "../db/cliente.ts";
 
 const addCliente = async (req: Request, res: Response) => {
   try {
-    const { nombre, dinero, coches } = req.body;
-    
+    const { nombre, dinero, coches } = req.body;    
     if (!nombre || !dinero ) {
       res.status(400).send("Nombre y dinero son necesarios");
       return;
     }
+    
     if(dinero<0){
       res.status(400).send("El dinero debe ser una cantidad positiva")
     } 

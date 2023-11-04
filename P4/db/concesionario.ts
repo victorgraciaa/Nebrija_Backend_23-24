@@ -6,7 +6,8 @@ const Schema = mongoose.Schema
 const concesionarioSchema = new Schema(
     {
         nombre: {type: String, required: true},
-        coches: {type: Array<Schema.ObjectId>, ref: "Coche"}
+        coches: {type: Array<Schema.ObjectId>, ref: "Coche"},
+        ventaBloqueada: {type: Boolean, required: true}
     },
     { timestamps: true }
 )

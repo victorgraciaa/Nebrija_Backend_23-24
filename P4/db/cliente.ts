@@ -7,8 +7,8 @@ const clienteSchema = new Schema(
     {
         nombre: {type: String, required: true},
         dinero: {type: Number, required: true},
-        coches: {type: Array<Schema.ObjectId>, ref: "Coche"} //string a objectId para corregir el error de "array de objectID"
-    },                                                                       //String[] --> pasarlo a objectId
+        coches: {type: Array<Schema.ObjectId>, ref: "Coche"} 
+    },                                                                       
     { timestamps: true }
 )
 

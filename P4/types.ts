@@ -11,5 +11,6 @@ export type Cliente = {
 
 export type Concesionario = {
     nombre: string,
-    coches: Coche[]
+    coches: Coche[],
+    ventaBloqueada: boolean
 }

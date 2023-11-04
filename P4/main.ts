@@ -1,29 +1,18 @@
-/*
-OBJETIVOS DE LA PRACTICA:
-
-    Permite crear coches                                               --> OK
-    Permite crear concesionarios                                       --> OK
-    Permite crear cliente                                              --> OK
-    Permite enviar coches a un concesionario
-    Permite ver los coches de un concesionario
-    Permite vender coches a un cliente
-    Permite ver los coches de un cliente
-    Permite eliminar coche de un concesionario
-    Permite eliminar coche de un cliente
-    Permite traspasar un coche de un cliente a otro
-    Permite añadir dinero a un cliente para poder comprar un coche
-    Permite bloquear la venta a ciertos concesionarios
-
-*/
-
 import express from "npm:express@4.18.2";
 import mongoose from "npm:mongoose@7.6.3";
 import { load } from "https://deno.land/std@0.204.0/dotenv/mod.ts";
+
+import getCochesConcesionario from "./resolvers/getCochesConcesionario.ts";
+import getCochesCliente from "./resolvers/getCochesCliente.ts";
 import addCoche from "./resolvers/addCoche.ts";
 import addCliente from "./resolvers/addCliente.ts";
 import addConcesionario from "./resolvers/addConcesionario.ts";
 import enviarCocheConcesionario from "./resolvers/enviarCocheConcesionario.ts";
 import deleteCocheCliente from "./resolvers/deleteCocheCliente.ts";
+import venderCocheCliente from "./resolvers/venderCocheCliente.ts";
+import traspasarCoche from "./resolvers/traspasarCoche.ts";
+import addDinero from "./resolvers/addDinero.ts";
+import deleteCocheConcesionario from "./resolvers/deleteCocheConcesionario.ts";
 
 const env = await load();
 
@@ -38,14 +27,17 @@ await mongoose.connect(MONGO_URL);
 const app = express();
 app.use(express.json());
 app
-  .post("/coches", addCoche) //Crea un coche
-  .post("/clientes", addCliente) //Crea un cliente
-  .post("/concesionarios", addConcesionario) //Crea un concesionario
-  .put("/concesionarios/:id/:matricula", enviarCocheConcesionario)
-  //.get("/clientes", getCochesCliente) //Muestra los coches de un cliente
-  //.get("/concesionarios", getCochesConcesionario) //Muestra los coches de un concesionario
-  //.delete("/clientes/:id/:matricula", deleteCocheCliente) //Borra el coche de un cliente
-  //.delete("/concesionarios/:matricula", deleteCocheConcesionario) //Borra el coche de un concesionario
+  .get("/concesionarios/:idConcesionario", getCochesConcesionario) 
+  .get("clientes/:idCliente", getCochesCliente)
+  .post("/coches", addCoche) 
+  .post("/clientes", addCliente) 
+  .post("/concesionarios", addConcesionario)
+  .post("/concesionarios/:idConcesionario/:idCoche", enviarCocheConcesionario) 
+  .put("/clientes/:idClienteVendedor/:idClienteComprador/:matricula", traspasarCoche) 
+  .put("/concesionarios/:idConcesionario/:idCliente/:idCoche", venderCocheCliente) 
+  .put("/:idCliente/:dineroSumado", addDinero)
+  .delete("/:idCliente/:idCoche", deleteCocheCliente)
+  .delete("/:idConcesionario/:idCoche", deleteCocheConcesionario)
 
 
 app.listen(3000, () => {
