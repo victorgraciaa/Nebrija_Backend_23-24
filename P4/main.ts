@@ -28,7 +28,7 @@ const app = express();
 app.use(express.json());
 app
   .get("/concesionarios/:idConcesionario", getCochesConcesionario) 
-  .get("clientes/:idCliente", getCochesCliente)
+  .get("/clientes/:idCliente", getCochesCliente)
   .post("/coches", addCoche) 
   .post("/clientes", addCliente) 
   .post("/concesionarios", addConcesionario)
