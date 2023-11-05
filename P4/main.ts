@@ -36,8 +36,8 @@ app
   .put("/clientes/:idClienteVendedor/:idClienteComprador/:matricula", traspasarCoche) 
   .put("/concesionarios/:idConcesionario/:idCliente/:idCoche", venderCocheCliente) 
   .put("/:idCliente/:dineroSumado", addDinero)
-  .delete("/:idCliente/:idCoche", deleteCocheCliente)
-  .delete("/:idConcesionario/:idCoche", deleteCocheConcesionario)
+  .delete("/clientes/:idCliente/:idCoche", deleteCocheCliente)
+  .delete("/concesionarios/:idConcesionario/:idCoche", deleteCocheConcesionario)
 
 
 app.listen(3000, () => {

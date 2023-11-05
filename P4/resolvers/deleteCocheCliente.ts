@@ -12,7 +12,6 @@ const deleteCocheCliente = async (req: Request, res: Response) => {
       return;
     }
     
-    
     const coche = await CocheModel.findById( idCoche ).exec()
     if (!coche) {
       res.status(404).send("Coche del cliente no encontrado");

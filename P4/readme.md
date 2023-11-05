@@ -50,11 +50,11 @@ Con este endpoint satisfacemos el requisito pedido en la práctica: Permite aña
 Los parámetros que se introducirán en la ruta corresponden al id del cliente y a la cantidad de dinero que se le desee añadir al cliente, generados por Mongo. 
 
 ### deleteCocheCliente
-.delete("/:idCliente/:idCoche", deleteCocheCliente)
+.delete("/clientes/:idCliente/:idCoche", deleteCocheCliente)
 Con este endpoint satisfacemos el requisito pedido en la práctica: Permite eliminar coche de un cliente.
 Los parámetros que se introducirán en la ruta corresponden al id del cliente y al del coche que se desea eliminar respectivamente, generados por Mongo.
 
 ### deleteCocheConcesionario
-.delete("/:idConcesionario/:idCoche", deleteCocheConcesionario)
+.delete("/concesionarios/:idConcesionario/:idCoche", deleteCocheConcesionario)
 Con este endpoint satisfacemos el requisito pedido en la práctica: Permite eliminar coche de un concesionario.
 Los parámetros que se introducirán en la ruta corresponden al id del concesionario y al del coche que se desea eliminar respectivamente, generados por Mongo.
