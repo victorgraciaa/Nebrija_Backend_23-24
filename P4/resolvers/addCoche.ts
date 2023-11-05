@@ -14,12 +14,6 @@ const addCoche = async (req: Request, res: Response) => {
       return
     }
 
-    const coche = await CocheModel.findOne({ matricula: matricula }).exec();
-    if (coche) {
-      res.status(400).send("El coche ya existe");
-      return;
-    }
-
     if(precio<0){
       res.status(400).send("El dinero debe ser una cantidad positiva")
       return
