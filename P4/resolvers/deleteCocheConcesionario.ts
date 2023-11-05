@@ -14,13 +14,13 @@ const deleteCocheConcesionario = async (req: Request, res: Response) => {
     
     const coche = await CocheModel.findById( idCoche ).exec()
     if (!coche) {
-      res.status(404).send("Coche del concesionario no encontrado");
+      res.status(404).send("Coche no encontrado");
       return;
     }
 
     const cocheBorrado = concesionario.coches.includes(coche._id.toString());
     if (!cocheBorrado) {
-      res.status(404).send("Coche not found");
+      res.status(404).send("Coche no encontrado");
       return;
     }
 
