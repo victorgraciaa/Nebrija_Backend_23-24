@@ -41,20 +41,6 @@ restaurantSchema.
     }
   });
 
-// Al buscar un restaurante, mostrar el nombre del restaurante y del cliente de las reservas
-restaurantSchema.
-  pre("findOne", async function (next) {
-    const restaurant = this as RestaurantModelType;
-    try {
-      await mongoose.model("restaurants").updateOne(
-        { _id: restaurant.restaurant },
-        { $set: { bookings: restaurant._id } }
-      );
-    } catch (e) {
-      console.error(e)
-    }
-  });
-
 export type RestaurantModelType = mongoose.Document &
   Omit<Restaurant, "bookings">;
   

@@ -2,7 +2,7 @@
 import express, { Request, Response } from "express";
 import mongoose from "mongoose";
 import { getClient } from "./resolvers/getClient.ts";
-import { getRestaurant } from "./resolvers/getRestaurante.ts";
+import { getRestaurant } from "./resolvers/getRestaurant.ts";
 import { getBooking } from "./resolvers/getBooking.ts";
 import { addClient } from "./resolvers/addClient.ts";
 import { addRestaurant } from "./resolvers/addRestaurant.ts";

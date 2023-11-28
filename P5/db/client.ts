@@ -48,20 +48,6 @@ clientSchema
     return phoneNumberExpRegular.test(phoneNumber.toString());
   }, "El numero de telefono no es valido");
 
-// Al buscar un cliente, mostrar el nombre del restaurante y del cliente de las reservas
-clientSchema
-  .pre("findOne", async function (next) {
-    const client = this as ClientModelType;
-    try {
-      await mongoose.model("bookings").updateOne(
-        { _id: client.bookings },
-        { $set: { bookings: client._id } }
-      );
-    } catch (e) {
-      console.error(e)
-    }
-  });
-
 export type ClientModelType = mongoose.Document &
   Omit<Client, "bookings">;
   
