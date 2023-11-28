@@ -11,7 +11,7 @@ export const getBooking = async ( req: Request<{ id: string }>, res: Response<Bo
     const booking = await BookingModel.findById(id).exec();
     if (!booking) {
       res.status(404).send({ error: "Reserva no encontrada" });
-      return;
+      return
     }
     const bookingResponse: Booking = await getBookingFromModel(booking);
     res.status(200).json(bookingResponse).send();
