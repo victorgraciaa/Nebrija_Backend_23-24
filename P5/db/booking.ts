@@ -76,6 +76,7 @@ bookingSchema.
   */
 
   // Si no especifica fecha, se añade la fecha actual
+  /*
   bookingSchema.
   pre("save", async function (next) {
     const booking = this as BookingModelType;
@@ -87,6 +88,7 @@ bookingSchema.
       console.error(e)
     }
   });
+  */
 
 export type BookingModelType = mongoose.Document &
   Omit<Booking, "id">
