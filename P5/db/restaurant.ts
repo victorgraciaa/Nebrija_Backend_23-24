@@ -29,7 +29,7 @@ restaurantSchema
 }, "El cif ya existe");
 
 // Si se elimina un restaurante, se eliminan sus reservas asociadas
-/*
+
 restaurantSchema.
   pre("findOneAndDelete", async function (next) {
     const restaurant = this as RestaurantModelType;
@@ -41,7 +41,6 @@ restaurantSchema.
       console.error(e)
     }
   });
-*/
 
 export type RestaurantModelType = mongoose.Document &
   Omit<Restaurant, "bookings">;

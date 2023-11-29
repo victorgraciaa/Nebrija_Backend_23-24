@@ -12,7 +12,7 @@ const bookingSchema = new Schema(
 );
 
 // Al añadir una reserva, se añade esa reserva correspondiente en restaurantes y clientes
-/*
+
 bookingSchema.
   pre("save", async function (next) {
     const newBooking = this as BookingModelType;
@@ -31,10 +31,10 @@ bookingSchema.
     }
     next();
   });
-  */
+  
 
   // Si se elimina una reserva, se eliminan esa reserva correspondiente en restaurantes y clientes
-  /*
+  
   bookingSchema.
   pre("findOneAndDelete", async function (next) {
     const booking = this as BookingModelType;
@@ -52,10 +52,10 @@ bookingSchema.
       console.error(e)
     }
   });
-  */
+  
 
   // Al buscar una reserva, mostrar el nombre del restaurante y del cliente
-  /*
+  
   bookingSchema.
   pre("findOne", async function (next) {
     const booking = this as BookingModelType;
@@ -73,10 +73,10 @@ bookingSchema.
       console.error(e)
     }
   });
-  */
+  
 
   // Si no especifica fecha, se añade la fecha actual
-  /*
+  
   bookingSchema.
   pre("save", async function (next) {
     const booking = this as BookingModelType;
@@ -88,7 +88,7 @@ bookingSchema.
       console.error(e)
     }
   });
-  */
+  
 
 export type BookingModelType = mongoose.Document &
   Omit<Booking, "id">
