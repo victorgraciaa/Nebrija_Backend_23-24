@@ -15,6 +15,7 @@ const clientSchema = new Schema(
   { timestamps: true }
 );
 
+/*
 // Validación de dni único
 clientSchema
   .path("dni")
@@ -47,6 +48,7 @@ clientSchema
     const phoneNumberExpRegular = /^[0-9]{9}$/;
     return phoneNumberExpRegular.test(phoneNumber.toString());
   }, "El numero de telefono no es valido");
+*/
 
 export type ClientModelType = mongoose.Document &
   Omit<Client, "bookings">;

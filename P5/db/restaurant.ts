@@ -14,6 +14,7 @@ const restaurantSchema = new Schema(
 );
 
 // Validaciones del cif
+/*
 restaurantSchema
   .path("cif")
   .validate(function (cif: string) {
@@ -27,6 +28,7 @@ restaurantSchema
   const cifExistente = await mongoose.models.Client.findOne({ dni });
   return !cifExistente;
 }, "El cif ya existe");
+*/
 
 // Si se elimina un restaurante, se eliminan sus reservas asociadas
 /*
