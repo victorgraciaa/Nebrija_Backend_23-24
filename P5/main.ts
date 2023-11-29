@@ -33,8 +33,8 @@ try {
     .delete("/restaurant", deleteRestaurants)
     .delete("/booking/:id", deleteBooking)
 
-  app.listen(3000, () => {
-    console.info("Server listening on port 3000");
+  app.listen(8000, () => {
+    console.info("Server listening on port 8000");
   });
 
 } catch (error) {
