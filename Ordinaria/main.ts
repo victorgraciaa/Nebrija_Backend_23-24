@@ -14,7 +14,7 @@ if (!MONGO_URL) {
 // Connect to MongoDB
 await mongoose.connect(MONGO_URL);
 
-console.info("🚀 Connected to MongoDB");
+console.info("🚀 Connected to MongoDB ");
 
 const server = new ApolloServer({
   typeDefs,
