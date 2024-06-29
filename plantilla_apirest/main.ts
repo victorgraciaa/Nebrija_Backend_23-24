@@ -7,8 +7,7 @@ import { getTipo } from "./resolvers/getTipo.ts";
 const MONGO_URL = "mongodb+srv://victorgraciaa:nebrija2324@cluster-nebrija-23-24.76u69py.mongodb.net/extraordinaria?retryWrites=true&w=majority"
 
 if (!MONGO_URL) {
-  console.log("No mongo URL found");
-  Deno.exit(1);
+  throw new Error("Please provide a MongoDB connection string");
 }
 
 await mongoose.connect(MONGO_URL);
