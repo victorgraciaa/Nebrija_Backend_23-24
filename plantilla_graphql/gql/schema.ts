@@ -1,7 +1,15 @@
 // The GraphQL schema
 export const typeDefs = `#graphql
-  type Tipo1 {
-   atributo1: String!
+  type Tipo {
+   atributo: String!
+  }
+
+  type Query {
+    getTipo: Tipo!
+  }
+
+  type Mutation {
+    addTipo(name: String!): Tipo!
   }
 
 `;

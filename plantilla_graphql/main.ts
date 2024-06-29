@@ -2,7 +2,7 @@ import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 import { Query } from "./resolvers/query.ts";
 import { Mutation } from "./resolvers/mutation.ts";
-import { tipo } from "./resolvers/tipo.ts";
+import { Tipo } from "./resolvers/tipo.ts";
 import { typeDefs } from "./gql/schema.ts";
 import mongoose from "mongoose";
 
@@ -21,7 +21,7 @@ const server = new ApolloServer({
   resolvers: {
     Query,
     Mutation,
-    tipo,
+    Tipo,
   },
 });
 
