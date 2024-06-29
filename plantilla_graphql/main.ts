@@ -6,7 +6,9 @@ import { Tipo } from "./resolvers/tipo.ts";
 import { typeDefs } from "./gql/schema.ts";
 import mongoose from "mongoose";
 
-const MONGO_URL = Deno.env.get("MONGO_URL");
+// const MONGO_URL = Deno.env.get("MONGO_URL");
+const MONGO_URL = "mongodb+srv://victorgraciaa:nebrija2324@cluster-nebrija-23-24.76u69py.mongodb.net/extraordinaria?retryWrites=true&w=majority"  
+
 if (!MONGO_URL) {
   throw new Error("Please provide a MongoDB connection string");
 }
