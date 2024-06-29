@@ -3,7 +3,8 @@ import express, { Request, Response } from "express";
 import mongoose from "mongoose";
 import { getTipo } from "./resolvers/getTipo.ts";
 
-const MONGO_URL = Deno.env.get("MONGO_URL");
+// const MONGO_URL = Deno.env.get("MONGO_URL");
+const MONGO_URL = "mongodb+srv://victorgraciaa:nebrija2324@cluster-nebrija-23-24.76u69py.mongodb.net/extraordinaria?retryWrites=true&w=majority"
 
 if (!MONGO_URL) {
   console.log("No mongo URL found");
