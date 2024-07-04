@@ -1,7 +1,7 @@
 // The GraphQL schema
 export const typeDefs = `#graphql
   type Tipo {
-   atributo: String!
+  
   }
 
   type Query {

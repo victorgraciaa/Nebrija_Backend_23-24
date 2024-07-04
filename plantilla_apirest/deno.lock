@@ -579,5 +579,11 @@
       }
     }
   },
-  "remote": {}
+  "remote": {},
+  "workspace": {
+    "dependencies": [
+      "npm:express@4.18.2",
+      "npm:mongoose@8.0.1"
+    ]
+  }
 }
